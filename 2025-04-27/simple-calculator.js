@@ -15,6 +15,10 @@ const readline = require('readline').createInterface({
         return num1 * num2;
       case '/':
         return num2 !== 0 ? num1 / num2 : "Error: Division by zero!";
+      case '%':
+        return num1 % num2;
+      case '^':
+        return Math.pow(num1, num2);
       default:
         return "Error: Invalid operator!";
     }
@@ -24,7 +28,7 @@ const readline = require('readline').createInterface({
     readline.question('Enter the first number: ', (firstInput) => {
       const num1 = parseFloat(firstInput);
   
-      readline.question('Enter the operator (+, -, *, /): ', (operator) => {
+      readline.question('Enter the operator (+, -, *, /, %, ^ ): ', (operator) => {
   
         readline.question('Enter the second number: ', (secondInput) => {
           const num2 = parseFloat(secondInput);
