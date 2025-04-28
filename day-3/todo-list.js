@@ -16,9 +16,15 @@ const readline = require('readline').createInterface({
       if (option === '4') {
         console.log("Exiting... Goodbye! 👋");
         readline.close();
+      } else if (option === '1') {
+        readline.question("Enter your task: ", (task) => {
+          tasks.push(task);
+          console.log(`✅ Task "${task}" added successfully!`);
+          showMenu(); // Go back to the menu
+        });
       } else {
         console.log(`You chose option ${option}. (Functionality coming soon!)`);
-        showMenu(); // Just repeat for now
+        showMenu();
       }
     });
   }
